@@ -1,12 +1,25 @@
-import { useState } from "react";
-import Editor from "./Editor";
+import { useEffect, useState } from "react";
+import Editor from "./components/Editor";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
   const [html, setHtml] = useState("");
   const [js, setJs] = useState("");
   const [css, setCss] = useState("");
+  const [srcDoc, setSrcDoc] = useState("");
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setSrcDoc(
+        `<html><body>${html}</body><style>${css}</style><script>${js}</script></html>`
+      );
+    }, 250);
+    return () => clearTimeout(timeout);
+  }, [setSrcDoc, html, css, js]);
   return (
     <>
+      <Header />
       <div className="pane top-pane">
         <Editor
           language="xml"
@@ -29,6 +42,7 @@ function App() {
       </div>
       <div className="pane">
         <iframe
+          srcDoc={srcDoc}
           src=""
           frameborder="0"
           title="output"
@@ -37,6 +51,7 @@ function App() {
           height="100%"
         ></iframe>
       </div>
+      <Footer />
     </>
   );
 }

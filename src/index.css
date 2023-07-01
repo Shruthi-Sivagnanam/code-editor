@@ -1,11 +1,33 @@
 body {
   margin: 0px;
 }
+.navbar {
+  padding: 15px;
+  background-color: hsl(225, 6%, 13%);
+  color: white;
+}
+.nav {
+  display: flex;
+}
+.icon {
+  font-size: 25px;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+.title {
+  padding: 0px;
+  margin-top: 0px;
+  margin-left: 20px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+}
 .top-pane {
   background-color: hsl(225, 6%, 25%);
 }
 .pane {
-  height: 50vh;
+  height: 60vh;
   display: flex;
 }
 .editor-container {
@@ -22,9 +44,9 @@ body {
   justify-content: space-between;
   background-color: hsl(225, 6%, 13%);
   color: white;
-  padding: 0.5rem, 0.5rem, 0.5rem, 0.5rem;
-  border-top-right-radius: 0.5rem;
-  border-top-left-radius: 0.5rem;
+  padding: 10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 .CodeMirror {
   height: 100% !important;
@@ -34,4 +56,10 @@ body {
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
   overflow: hidden;
+}
+.footer {
+  padding: 5px;
+  background-color: hsl(225, 6%, 13%);
+  color: white;
+  text-align: center;
 }

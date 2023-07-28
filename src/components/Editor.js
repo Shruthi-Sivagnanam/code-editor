@@ -16,9 +16,6 @@ export default function Editor(props) {
     <div className="editor-container">
       <div className="editor-title">
         {displayName}
-        <button>
-          <i className="fa fa-expand"></i>
-        </button>
       </div>
       <ControlledEditor
         onBeforeChange={handleChange}
